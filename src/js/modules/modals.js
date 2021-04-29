@@ -31,8 +31,8 @@ const modals = () => {
     }
     modalHandler(".popup_engineer", '.popup_close', ".popup_engineer_btn")
     modalHandler(".popup", '.popup_close', ".phone_link")
-    setTimeout(() => {
-        showModal(".popup")
-    }, 3000)
+    // setTimeout(() => {
+    //     showModal(".popup")
+    // }, 6000)
 }
 export default modals
