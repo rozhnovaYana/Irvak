@@ -6,12 +6,13 @@ const tabs = (tabsWrapperSelector, tabsSelector, contentSelector, activeClass) =
        content.forEach(item => item.style.display = "none")
        tabs.forEach(item => item.classList.remove(activeClass))
     }
-    const showContent = (i) => {
+    const showContent = (i=0) => {
         content[i].style.display = "block"
         tabs[i].classList.add(activeClass)
     }
     // hideContent()
     // showContent(0)
+    
     tabsWrapper.addEventListener('click', (e) => {
         const target = e.target
         if (target && (

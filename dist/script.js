@@ -15562,7 +15562,8 @@ var tabs = function tabs(tabsWrapperSelector, tabsSelector, contentSelector, act
     });
   };
 
-  var showContent = function showContent(i) {
+  var showContent = function showContent() {
+    var i = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
     content[i].style.display = "block";
     tabs[i].classList.add(activeClass);
   }; // hideContent()
