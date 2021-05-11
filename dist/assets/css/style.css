@@ -28,6 +28,15 @@ input:focus,
 textarea:focus {
   outline: none;
 }
+.imgPopup{
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.bigImg{
+  max-height: 85%;
+  max-width: 90%;
+}
 
 .no-padding {
   padding: 0 !important;

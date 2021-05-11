@@ -17808,6 +17808,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/forms */ "./src/js/modules/forms.js");
 /* harmony import */ var _modules_calcHandler__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/calcHandler */ "./src/js/modules/calcHandler.js");
 /* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/timer */ "./src/js/modules/timer.js");
+/* harmony import */ var _modules_bigImage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/bigImage */ "./src/js/modules/bigImage.js");
+
 
 
 
@@ -17824,7 +17826,48 @@ window.addEventListener("DOMContentLoaded", function () {
   Object(_modules_forms__WEBPACK_IMPORTED_MODULE_3__["default"])(calcState);
   Object(_modules_calcHandler__WEBPACK_IMPORTED_MODULE_4__["default"])(calcState);
   Object(_modules_timer__WEBPACK_IMPORTED_MODULE_5__["default"])(".container1", deadline);
+  Object(_modules_bigImage__WEBPACK_IMPORTED_MODULE_6__["default"])();
 });
+
+/***/ }),
+
+/***/ "./src/js/modules/bigImage.js":
+/*!************************************!*\
+  !*** ./src/js/modules/bigImage.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var bigImage = function bigImage() {
+  var imgPopup = document.createElement("div"),
+      bigImg = document.createElement("img"),
+      containerSection = document.querySelector(".works");
+  containerSection.appendChild(imgPopup);
+  imgPopup.classList.add("popup");
+  imgPopup.classList.add("imgPopup");
+  bigImg.classList.add("bigImg");
+  imgPopup.appendChild(bigImg);
+  containerSection.addEventListener("click", function (e) {
+    e.preventDefault();
+    var target = e.target;
+
+    if (target && target.classList.contains("preview")) {
+      imgPopup.style.display = "flex";
+      document.body.style.overflow = "hidden";
+      var src = target.parentNode.getAttribute('href');
+      bigImg.setAttribute('src', src);
+    }
+
+    if (target && target.classList.contains("popup")) {
+      imgPopup.style.display = "none";
+      document.body.style.overflow = "";
+    }
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (bigImage);
 
 /***/ }),
 
@@ -18180,7 +18223,6 @@ var timer = function timer(id, deadline) {
         minutes = Math.floor(totalTime / 1000 / 60 % 60),
         hours = Math.floor(totalTime / 1000 / 60 / 60 % 24),
         days = Math.floor(totalTime / 1000 / 60 / 60 / 24);
-    console.log(new Date(endtime));
     return {
       "seconds": seconds,
       "minutes": minutes,

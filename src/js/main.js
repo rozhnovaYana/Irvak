@@ -4,6 +4,7 @@ import tabs from "./modules/tabs"
 import forms from "./modules/forms"
 import calcHandler from "./modules/calcHandler"
 import timer from "./modules/timer"
+import bigImage from "./modules/bigImage"
 window.addEventListener("DOMContentLoaded", () => {
     let calcState={},
     deadline=("2021-05-12")
@@ -14,4 +15,5 @@ window.addEventListener("DOMContentLoaded", () => {
     forms(calcState)
     calcHandler(calcState)
     timer(".container1", deadline)
+    bigImage()
 })

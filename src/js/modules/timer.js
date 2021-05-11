@@ -12,7 +12,6 @@ const timer=(id, deadline)=>{
         minutes=Math.floor((totalTime/1000/60)%60),
         hours=Math.floor((totalTime/1000/60/60)%24),
         days=Math.floor(totalTime/1000/60/60/24)
-        console.log(new Date(endtime))
         return{
             "seconds":seconds,
             "minutes":minutes,
